@@ -40,10 +40,10 @@ Options:
 
     Examples:
        start watching with default options:
-         $ emap
+         $ mapfile-ejs
 
        start watching with custom options:
-         $ emap -d ./examples -i iso-8859-1 -o iso-8859-1 -r
+         $ mapfile-ejs -d ./examples -i iso-8859-1 -o iso-8859-1 -r
 ```
 
 

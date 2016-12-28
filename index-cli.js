@@ -23,10 +23,10 @@ program.on('--help', function() {
   console.log('  Examples:');
   console.log('');
   console.log('    start watching with default options:');
-  console.log('      $ emap ');
+  console.log('      $ mapfile-ejs ');
   console.log('');
   console.log('    start watching with custom options:');
-  console.log('      $ emap -d ./examples -i iso-8859-1 -o iso-8859-1 -r');
+  console.log('      $ mapfile-ejs -d ./examples -i iso-8859-1 -o iso-8859-1 -r');
   console.log('');
 });
 
