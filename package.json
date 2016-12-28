@@ -1,13 +1,18 @@
 {
   "name": "mapfile-ejs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Watching and rendering of MapServer mapfiles with including EJS templates.",
   "main": "index.js",
-   "bin": "emap.js",
+  "bin": "emap.js",
   "directories": {
     "example": "examples"
   },
-  "dependencies": {},
+  "dependencies": {
+    "chokidar": "^1.6.1",
+    "commander": "^2.9.0",
+    "ejs": "^2.5.5",
+    "iconv-lite": "^0.4.15"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -26,12 +31,6 @@
   ],
   "author": "Jens Pabel <jens.pabel@bielefeld.de>",
   "license": "MIT",
-  "dependencies": {
-    "chokidar": "^1.6.1",
-    "commander": "^2.9.0",
-    "ejs": "^2.5.5",
-    "iconv-lite": "^0.4.15"
-  },
   "bugs": {
     "url": "https://github.com/stadt-bielefeld/mapfile-ejs/issues"
   },
