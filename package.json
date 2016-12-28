@@ -1,6 +1,6 @@
 {
   "name": "mapfile-ejs",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Using of embedded JavaScript into MapServer mapfiles.",
   "main": "index.js",
   "bin": "index-cli.js",
