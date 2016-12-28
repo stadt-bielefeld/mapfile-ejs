@@ -14,7 +14,7 @@ r2.watch('./dirOfEjsMapfiles2',{
   ignoreInitial: false
 });
 
-//stop watching and rendering in 15 sec
+//stop watching and rendering after 15 sec
 setTimeout(() => {
   r1.close();
   r2.close();
