@@ -3,7 +3,10 @@
   "version": "1.0.6",
   "description": "Using of embedded JavaScript into MapServer mapfiles.",
   "main": "index.js",
-  "bin": "index-cli.js",
+  "bin": {
+    "emap": "index-cli.js",
+    "mapfile-ejs": "index-cli.js"
+  },
   "directories": {
     "example": "examples"
   },
