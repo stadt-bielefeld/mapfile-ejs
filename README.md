@@ -1,6 +1,6 @@
 # mapfile-ejs
 
-The module mapfile-ejs enables you to use [embedded JavaScript (EJS)](http://www.embeddedjs.com/ "<% Embedded JavaScript %>") into [MapServer mapfiles](http://mapserver.org/documentation.html#mapfile "MapServer mapfiles").
+The module mapfile-ejs enables you to use [embedded JavaScript (EJS)](http://www.embeddedjs.com/ "<% Embedded JavaScript %>"){:target="_blank"} into [MapServer mapfiles](http://mapserver.org/documentation.html#mapfile "MapServer mapfiles").
 
 ## Installation
 
@@ -71,7 +71,8 @@ setTimeout(() => {
 },15000);
 ```
 
-### Mapfile example with EJS
+### Mapfile
+Input (example.emap):
 ```js
 MAP
 
@@ -87,6 +88,24 @@ END
 <%
   } //end of loop
 %>
+
+END
+```
+Output (example.map):
+```js
+MAP
+
+LAYER
+  NAME "layer_0"
+END
+
+LAYER
+  NAME "layer_1"
+END
+
+LAYER
+  NAME "layer_2"
+END
 
 END
 
