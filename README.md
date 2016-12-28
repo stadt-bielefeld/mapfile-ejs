@@ -25,7 +25,7 @@ npm install mapfile-ejs -g
 Use the file extension \*.emap for [MapServer mapfiles](http://mapserver.org/documentation.html#mapfile "MapServer mapfiles") with [EJS](http://www.embeddedjs.com/ "<% Embedded JavaScript %>").
 If you watch a directory, all \*.emap files will be rendering to \*.map files.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dsH9haQD3FQ" frameborder="0" allowfullscreen></iframe>
+[![Preview](http://img.youtube.com/vi/dsH9haQD3FQ/0.jpg)](https://www.youtube.com/watch?v=dsH9haQD3FQ "Preview")
 
 ### Terminal
 ```
