@@ -1,0 +1,19 @@
+MAP
+#Example 1 ...
+
+
+LAYER
+  NAME "layer_0"
+END
+
+LAYER
+  NAME "layer_1"
+END
+
+LAYER
+  NAME "layer_2"
+END
+
+
+#...
+END

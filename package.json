@@ -1,0 +1,17 @@
+{
+  "name": "mapfile-ejs",
+  "version": "1.0.0",
+  "description": "Watching and rendering of mapserver mapfiles with including ejs templates.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jens Pabel <jens.pabel@bielefeld.de>",
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^1.6.1",
+    "commander": "^2.9.0",
+    "ejs": "^2.5.5",
+    "iconv-lite": "^0.4.15"
+  }
+}

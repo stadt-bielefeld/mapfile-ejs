@@ -1,0 +1,19 @@
+MAP
+#Example 2 ...
+
+
+LAYER
+  NAME "gf_layer_0"
+END
+
+LAYER
+  NAME "gf_layer_1"
+END
+
+LAYER
+  NAME "gf_layer_2"
+END
+
+
+#...
+END

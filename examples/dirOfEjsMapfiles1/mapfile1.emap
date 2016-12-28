@@ -1,0 +1,11 @@
+MAP
+#Example 1 ...
+
+<% for(var i = 0; i < 3; i++) { %>
+LAYER
+  NAME "layer_<%- i %>"
+END
+<% } %>
+
+#...
+END
