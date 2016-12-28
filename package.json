@@ -1,7 +1,7 @@
 {
   "name": "mapfile-ejs",
   "version": "1.0.2",
-  "description": "Watching and rendering of MapServer mapfiles with including EJS templates.",
+  "description": "Using of embedded JavaScript into MapServer mapfiles.",
   "main": "index.js",
   "bin": "index-cli.js",
   "directories": {
