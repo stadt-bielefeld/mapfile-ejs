@@ -1,6 +1,6 @@
 # mapfile-ejs
 
-The module mapfile-ejs enables you to use [embedded JavaScript (EJS)](http://www.embeddedjs.com/ "<% Embedded JavaScript %>"){:target="_blank"} into [MapServer mapfiles](http://mapserver.org/documentation.html#mapfile "MapServer mapfiles").
+The module mapfile-ejs enables you to use [embedded JavaScript (EJS)](http://www.embeddedjs.com/ "<% Embedded JavaScript %>") into [MapServer mapfiles](http://mapserver.org/documentation.html#mapfile "MapServer mapfiles").
 
 ## Installation
 
