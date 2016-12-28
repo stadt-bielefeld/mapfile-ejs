@@ -72,7 +72,7 @@ setTimeout(() => {
 },15000);
 ```
 
-### Mapfile example with EJS templates
+### Mapfile example with EJS
 ```js
 MAP
 
