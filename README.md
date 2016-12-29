@@ -1,6 +1,6 @@
 # mapfile-ejs
 
-The module mapfile-ejs enables you to use [embedded JavaScript (EJS)](http://www.embeddedjs.com/ "<% Embedded JavaScript %>") into [MapServer mapfiles](http://mapserver.org/documentation.html#mapfile "MapServer mapfiles").
+The module mapfile-ejs allows you to use [Embedded JavaScript (EJS)](http://www.embeddedjs.com/ "Embedded JavaScript") into [MapServer Mapfiles](http://mapserver.org/documentation.html#mapfile "MapServer Mapfiles").
 
 ## Installation
 
@@ -22,10 +22,8 @@ npm install mapfile-ejs -g
 ```
 ## Getting started
 
-Use the file extension \*.emap for [MapServer mapfiles](http://mapserver.org/documentation.html#mapfile "MapServer mapfiles") with [EJS](http://www.embeddedjs.com/ "<% Embedded JavaScript %>").
+Use the file extension \*.emap for [MapServer Mapfiles](http://mapserver.org/documentation.html#mapfile "MapServer mapfiles") with [EJS](http://www.embeddedjs.com/ "Embedded JavaScript").
 If you watch a directory, all \*.emap files will be rendering to \*.map files.
-
-[![Preview](http://img.youtube.com/vi/dsH9haQD3FQ/0.jpg)](https://www.youtube.com/watch?v=dsH9haQD3FQ "Preview")
 
 ### Terminal
 ```
@@ -52,21 +50,21 @@ Usage: emap [options]
 ```js
 let MapfileRenderer = require('mapfile-ejs');
 
-//create renderer
+//Create renderer
 let r1 = new MapfileRenderer();
 let r2 = new MapfileRenderer();
 
-//watching and rendering in directory 1
+//Watching and rendering in directory 1
 r1.watch('./dirOfEjsMapfiles1');
 
-//watching and rendering in directory 2
+//Watching and rendering in directory 2
 r2.watch('./dirOfEjsMapfiles2',{
   inputEncoding: 'utf8',
   outputEncoding: 'utf8',
   ignoreInitial: false
 });
 
-//stop watching and rendering after 15 sec
+//Stop watching and rendering after 15 sec
 setTimeout(() => {
   r1.close();
   r2.close();
@@ -79,7 +77,7 @@ Input (example.emap):
 MAP
 
 <%
-  //loop to create 3 layers
+  //Loop to create 3 layers
   for(let i = 0; i < 3; i++) {
 %>
 
@@ -88,7 +86,7 @@ LAYER
 END
 
 <%
-  } //end of loop
+  } //End of loop
 %>
 
 END

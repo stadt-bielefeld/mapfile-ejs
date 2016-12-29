@@ -1,7 +1,7 @@
 {
   "name": "mapfile-ejs",
   "version": "1.0.8",
-  "description": "Allows using of embedded JavaScript into MapServer mapfiles.",
+  "description": "Allows you to use Embedded JavaScript into MapServer Mapfiles.",
   "main": "index.js",
   "bin": {
     "emap": "emap.js"
