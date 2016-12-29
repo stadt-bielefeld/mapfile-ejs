@@ -1,11 +1,10 @@
 {
   "name": "mapfile-ejs",
   "version": "1.0.7",
-  "description": "Using of embedded JavaScript into MapServer mapfiles.",
+  "description": "Allows using of embedded JavaScript into MapServer mapfiles.",
   "main": "index.js",
   "bin": {
-    "emap": "index-cli.js",
-    "mapfile-ejs": "index-cli.js"
+    "emap": "emap.js"
   },
   "directories": {
     "example": "examples"
@@ -25,12 +24,13 @@
     "url": "git+https://github.com/stadt-bielefeld/mapfile-ejs.git"
   },
   "keywords": [
-    "UMN",
+    "Mapfile",
     "MapServer",
     "JavaScript",
-    "Node.js",
     "EJS",
-    "Templates"
+    "UMN",
+    "WMS",
+    "WFS"
   ],
   "author": "Jens Pabel <jens.pabel@bielefeld.de>",
   "license": "MIT",

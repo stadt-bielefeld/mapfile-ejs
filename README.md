@@ -29,20 +29,22 @@ If you watch a directory, all \*.emap files will be rendering to \*.map files.
 
 ### Terminal
 ```
-Options:
-    -h, --help                   output usage information
-    -V, --version                output the version number
-    -d, --directory [type]       input directory with ejs mapfiles (*.emap) (default: current directory)
-    -i, --inputEncoding [type]   encoding of input ejs mapfiles (default: utf8)
-    -o, --outputEncoding [type]  encoding of output mapfiles (default: utf8)
-    -r, --ignoreInitial          Ignore rendering of ejs mapfiles on initial (default: false)
+Usage: emap [options]
 
-    Examples:
-       start watching with default options:
-         $ mapfile-ejs
+  Options:
+    -h, --help                   Output usage information
+    -V, --version                Output the version number
+    -d, --directory [type]       Input directory of mapfiles with EJS (*.emap) (default: current directory)
+    -i, --inputEncoding [type]   Encoding of input mapfiles with EJS (default: utf8)
+    -o, --outputEncoding [type]  Encoding of output mapfiles without EJS (default: utf8)
+    -r, --ignoreInitial          Ignore rendering of mapfiles with EJS on initial (default: false)
 
-       start watching with custom options:
-         $ mapfile-ejs -d ./examples -i iso-8859-1 -o iso-8859-1 -r
+  Examples:
+    Start watching and rendering with default options:
+      $ emap
+
+    Start watching and rendering with custom options:
+      $ emap -d ./examples -i iso-8859-1 -o iso-8859-1 -r
 ```
 
 

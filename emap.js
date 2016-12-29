@@ -9,24 +9,24 @@ let MapfileRenderer = require(__dirname + '/index.js'); //MapfileRenderer class
 //MapfileRenderer
 let renderer = new MapfileRenderer();
 
-//Set version of cli program
+//Set version
 program.version(packageJson.version);
 
-//CLI options
-program.option('-d, --directory [type]', 'input directory with ejs mapfiles (*.emap) (default: current directory)');
-program.option('-i, --inputEncoding [type]', 'encoding of input ejs mapfiles (default: utf8)');
-program.option('-o, --outputEncoding [type]', 'encoding of output mapfiles (default: utf8)');
-program.option('-r, --ignoreInitial', 'Ignore rendering of ejs mapfiles on initial (default: false)');
+//Options
+program.option('-d, --directory [type]', 'Input directory of mapfiles with EJS (*.emap) (default: current directory)');
+program.option('-i, --inputEncoding [type]', 'Encoding of input mapfiles with EJS (default: utf8)');
+program.option('-o, --outputEncoding [type]', 'Encoding of output mapfiles without EJS (default: utf8)');
+program.option('-r, --ignoreInitial', 'Ignore rendering of mapfiles with EJS on initial (default: false)');
 
-//Examples on help
+//Examples
 program.on('--help', function() {
   console.log('  Examples:');
   console.log('');
-  console.log('    start watching with default options:');
-  console.log('      $ mapfile-ejs ');
+  console.log('    Start watching and rendering with default options:');
+  console.log('      $ emap ');
   console.log('');
-  console.log('    start watching with custom options:');
-  console.log('      $ mapfile-ejs -d ./examples -i iso-8859-1 -o iso-8859-1 -r');
+  console.log('    Start watching and rendering with custom options:');
+  console.log('      $ emap -d ./examples -i iso-8859-1 -o iso-8859-1 -r');
   console.log('');
 });
 
@@ -42,29 +42,29 @@ program.parse(process.argv);
 if (!program.directory) {
   program.directory = '.';
 }
-console.log('  watching at ' + program.directory);
+console.log('  Watching at ' + program.directory);
 
 //Set input encoding
 if (!program.inputEncoding) {
   program.inputEncoding = 'utf8';
 }
-console.log('  input encoding: ' + program.inputEncoding);
+console.log('  Input encoding: ' + program.inputEncoding);
 
 //Set output encoding
 if (!program.outputEncoding) {
   program.outputEncoding = 'utf8';
 }
-console.log('  output encoding: ' + program.outputEncoding);
+console.log('  Output encoding: ' + program.outputEncoding);
 
 //Set no rendering on start
 if(!program.ignoreInitial){
   program.ignoreInitial = false;
 }
-console.log('  ignore rendering on initial: ' + program.ignoreInitial);
+console.log('  Ignore rendering on initial: ' + program.ignoreInitial);
 
 //Footer
 console.log('###################################################');
-console.log('## stop watching with Ctrl+C ######################');
+console.log('## Stop watching with Ctrl+C ######################');
 console.log('###################################################');
 
 //Watch and render
