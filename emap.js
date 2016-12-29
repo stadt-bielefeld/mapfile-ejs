@@ -35,7 +35,7 @@ console.log('###################################################');
 console.log('## ' + packageJson.name + ' v' + packageJson.version + ' #############################');
 console.log('###################################################');
 
-//Parse cli options
+//Parse arguments
 program.parse(process.argv);
 
 //Set directory

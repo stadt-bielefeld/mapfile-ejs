@@ -8,7 +8,7 @@ let ejs = require('ejs'); //Renderer for EJS content
 //-- Modules -------------------------------------------------------------------
 
 /**
- * The MapfileRenderer watches a directory and renders all EJS mapfiles (*.emap) to mapfiles (*.map).
+ * The MapfileRenderer watches a directory and renders all mapfiles with EJS (*.emap) to normal mapfiles (*.map).
  */
 class MapfileRenderer {
 
@@ -16,54 +16,87 @@ class MapfileRenderer {
    * Creates a MapfileRenderer.
    */
   constructor() {
+
+    //Default options
     this._options = {
       inputEncoding: 'utf8',
       outputEncoding: 'utf8',
       ignoreInitial: false
     };
+
   }
 
   /**
-   * It renders a EJS mapfile (*.emap) to a mapfile (*.map) in the same directory.
-   * @param {string} file EJS mapfile (*.emap)
+   * It returns the current options.
+   */
+  getOptions(){
+    return this._options;
+  }
+
+  /**
+   * It renders a mapfile with EJS (*.emap) to a normal mapfile (*.map) in the same directory.
+   * @param {string} file Path of a mapfile with EJS (*.emap)
    */
   _renderFile(file) {
     try {
 
+      //Read file as buffer
       let inputDataBuffer = fs.readFileSync(file);
+
+      //Decode the buffer to a string
       let inputData = iconv.decode(inputDataBuffer, this._options.inputEncoding);
+
+      //Render the EJS
       let outputData = ejs.render(inputData);
+
+      //Create a buffer
       let outputDataBuffer = iconv.encode(outputData, this._options.outputEncoding);
+
+      //Determine file name of the normal mapfile
       let newFile = file.replace('.emap', '.map');
+
+      //Write the normal mapfile
       fs.writeFileSync(newFile, outputDataBuffer);
 
-      console.log(newFile + ' was created.');
+      //Show a message of the rendered file
+      console.log(newFile + ' was rendered.');
+
     } catch (e) {
+
+      //Show any error
       console.error(e.message);
     }
   }
 
   /**
-   * It removes the mapfile (*.map) of a EJS mapfile (*.emap).
-   * @param {string} file EJS mapfile (*.emap)
+   * It removes the normal mapfile (*.map) of a mapfile with EJS (*.emap).
+   * @param {string} file Path of a mapfile with EJS (*.emap)
    */
   _removeFile(file) {
+    //Determine file name of the normal mapfile
     let newFile = file.replace('.emap', '.map');
+
     try {
+
+      //Remove the normal mapfile
       fs.unlinkSync(newFile);
+
+      //Show a message of the deleted file
       console.log(newFile + ' was deleted.');
     } catch (e) {
+
+      //Show any error
       console.error(e.message);
     }
   }
 
   /**
-   * It starts file watching and rendering of EJS mapfiles (*.emap).
-   *  @param {string} dir Directory of EJS mapfiles (*.emap)
+   * It starts file watching and rendering of mapfiles with EJS (*.emap).
+   *  @param {string} dir Directory of mapfiles with EJS (*.emap)
    *  @param {object} options Options
-   *  @param {string} options.inputEncoding Encoding of the input EJS mapfiles (*.emap). Default is utf8.
-   *  @param {string} options.outputEncoding Encoding of the output mapfile (*.map). Default is utf8.
-   *  @param {boolean} options.ignoreInitial Ignore files on initialization for rendering. Default is false.
+   *  @param {string} options.inputEncoding Encoding of input mapfiles with EJS (default: utf8)
+   *  @param {string} options.outputEncoding Encoding of output mapfiles without EJS (default: utf8)
+   *  @param {boolean} options.ignoreInitial Ignore rendering of mapfiles with EJS on initial (default: false)
    */
   watch(dir, options) {
 
