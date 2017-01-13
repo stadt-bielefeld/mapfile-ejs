@@ -1,6 +1,6 @@
 # mapfile-ejs
 
-The module mapfile-ejs allows you to use [Embedded JavaScript (EJS)](http://www.embeddedjs.com/ "Embedded JavaScript") into [MapServer Mapfiles](http://mapserver.org/documentation.html#mapfile "MapServer Mapfiles").
+The module mapfile-ejs allows you to use [Embedded JavaScript (EJS)](http://ejs.co/ "Embedded JavaScript") into [MapServer Mapfiles](http://mapserver.org/documentation.html#mapfile "MapServer Mapfiles").
 
 ## Installation
 
@@ -22,7 +22,7 @@ npm install mapfile-ejs -g
 ```
 ## Getting started
 
-Use the file extension \*.emap for [MapServer Mapfiles](http://mapserver.org/documentation.html#mapfile "MapServer mapfiles") with [EJS](http://www.embeddedjs.com/ "Embedded JavaScript").
+Use the file extension \*.emap for [MapServer Mapfiles](http://mapserver.org/documentation.html#mapfile "MapServer mapfiles") with [EJS](http://ejs.co/ "Embedded JavaScript").
 If you watch a directory, all \*.emap files will be rendering to \*.map files.
 
 ### Terminal
