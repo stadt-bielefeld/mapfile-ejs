@@ -139,7 +139,7 @@ class MapfileRenderer {
 
     //Handle unlinked files
     this._watcher.on('unlink', (file) => {
-      this._removeFile(file);
+      //this._removeFile(file);
     });
 
     //Handle errors
