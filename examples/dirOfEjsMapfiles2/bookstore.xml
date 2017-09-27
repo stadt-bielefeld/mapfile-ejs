@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+
+<book>
+  <title lang="en">Everyday Italian</title>
+  <price>15</price>
+</book>
+
+<book>
+  <title lang="en">Harry Potter</title>
+  <price>15</price>
+</book>
+
+<book>
+  <title lang="en">Learning XML</title>
+  <price>15</price>
+</book>
+</bookstore>

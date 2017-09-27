@@ -21,7 +21,8 @@ class MapfileRenderer {
     this._options = {
       inputEncoding: 'utf8',
       outputEncoding: 'utf8',
-      ignoreInitial: false
+      ignoreInitial: false,
+      eFiles: false
     };
 
   }
@@ -29,7 +30,7 @@ class MapfileRenderer {
   /**
    * It returns the current options.
    */
-  getOptions(){
+  getOptions() {
     return this._options;
   }
 
@@ -53,7 +54,9 @@ class MapfileRenderer {
       let outputDataBuffer = iconv.encode(outputData, this._options.outputEncoding);
 
       //Determine file name of the normal mapfile
-      let newFile = file.replace('.emap', '.map');
+      let splittedFile = file.split('.');
+      let fileExt = splittedFile[splittedFile.length - 1];
+      let newFile = file.replace('.' + fileExt, '.' + fileExt.substring(1, fileExt.length));
 
       //Write the normal mapfile
       fs.writeFileSync(newFile, outputDataBuffer);
@@ -97,19 +100,28 @@ class MapfileRenderer {
    *  @param {string} options.inputEncoding Encoding of input mapfiles with EJS (default: utf8)
    *  @param {string} options.outputEncoding Encoding of output mapfiles without EJS (default: utf8)
    *  @param {boolean} options.ignoreInitial Ignore rendering of mapfiles with EJS on initial (default: false)
+   *  @param {boolean} options.eFiles Render all e files like *.exml, *.ecss (default: false)
    */
   watch(dir, options) {
 
     //Set options
-    if(options){
+    if (options) {
       this._options = Object.assign(this._options, options);
     }
 
     //Set file extension for watching
     if (dir.endsWith('/') || dir.endsWith('\\')) {
-      dir += '**/*.emap';
+      if(this._options.eFiles){
+        dir += '**/*.e*';
+      }else{
+        dir += '**/*.emap';
+      }
     } else {
-      dir += '/**/*.emap';
+      if(this._options.eFiles){
+        dir += '/**/*.e*';
+      }else{
+        dir += '/**/*.emap';
+      }
     }
 
     //Close watcher, if it's running
@@ -151,8 +163,8 @@ class MapfileRenderer {
   /**
    * It closes the file watcher.
    */
-  close(){
-    if(this._watcher){
+  close() {
+    if (this._watcher) {
       this._watcher.close();
     }
   }

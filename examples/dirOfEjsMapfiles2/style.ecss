@@ -1,0 +1,11 @@
+<%
+  let fontSize = 8;
+-%>
+
+h1 {
+    font-size: <%- fontSize * 2 %>pt;
+}
+
+h2 {
+    font-size: <%- fontSize %>pt;
+}

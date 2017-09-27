@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+<%
+  let titles = ['Everyday Italian','Harry Potter','Learning XML'];
+  titles.forEach((title)=>{
+%>
+<book>
+  <title lang="en"><%- title %></title>
+  <price>15</price>
+</book>
+<%
+  });
+-%>
+</bookstore>

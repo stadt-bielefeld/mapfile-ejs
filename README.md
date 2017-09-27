@@ -36,13 +36,14 @@ Usage: emap [options]
     -i, --inputEncoding [type]   Encoding of input mapfiles with EJS (default: utf8)
     -o, --outputEncoding [type]  Encoding of output mapfiles without EJS (default: utf8)
     -r, --ignoreInitial          Ignore rendering of mapfiles with EJS on initial (default: false)
+    -e, --eFiles                 Render all e files like *.exml, *.ecss (default: false)
 
   Examples:
     Start watching and rendering with default options:
       $ emap
 
     Start watching and rendering with custom options:
-      $ emap -d ./examples -i iso-8859-1 -o iso-8859-1 -r
+      $ emap -d ./examples -i iso-8859-1 -o iso-8859-1 -r -e
 ```
 
 

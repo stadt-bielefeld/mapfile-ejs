@@ -17,6 +17,7 @@ program.option('-d, --directory [type]', 'Input directory of mapfiles with EJS (
 program.option('-i, --inputEncoding [type]', 'Encoding of input mapfiles with EJS (default: utf8)');
 program.option('-o, --outputEncoding [type]', 'Encoding of output mapfiles without EJS (default: utf8)');
 program.option('-r, --ignoreInitial', 'Ignore rendering of mapfiles with EJS on initial (default: false)');
+program.option('-e, --eFiles', 'Render all e files like *.exml, *.ecss (default: false)');
 
 //Examples
 program.on('--help', function() {
@@ -61,6 +62,12 @@ if(!program.ignoreInitial){
   program.ignoreInitial = false;
 }
 console.log('  Ignore rendering on initial: ' + program.ignoreInitial);
+
+
+if(!program.eFiles){
+  program.eFiles = false;
+}
+console.log('  Render all e files: ' + program.eFiles);
 
 //Footer
 console.log('###################################################');
