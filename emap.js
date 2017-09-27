@@ -78,5 +78,6 @@ console.log('###################################################');
 renderer.watch(program.directory, {
   inputEncoding: program.inputEncoding,
   outputEncoding: program.outputEncoding,
-  ignoreInitial: program.ignoreInitial
+  ignoreInitial: program.ignoreInitial,
+  eFiles: program.eFiles
 });
