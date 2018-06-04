@@ -1,0 +1,5 @@
+MAP
+
+<%- include('include.map', {}); %>
+
+END
