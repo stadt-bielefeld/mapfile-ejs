@@ -10,6 +10,7 @@ Windows:
 Use the installer from <https://nodejs.org/>
 
 Ubuntu / Debian:
+
 ```sh
 apt-get install nodejs npm
 ```
@@ -17,16 +18,19 @@ apt-get install nodejs npm
 ### 02 mapfile-ejs
 
 Windows / Ubuntu / Debian
+
 ```sh
 npm install mapfile-ejs -g
 ```
+
 ## Getting started
 
 Use the file extension \*.emap for [MapServer Mapfiles](http://mapserver.org/documentation.html#mapfile "MapServer mapfiles") with [EJS](http://ejs.co/ "Embedded JavaScript").
 If you watch a directory, all \*.emap files will be rendering to \*.map files.
 
 ### Terminal
-```
+
+```plain
 Usage: emap [options]
 
   Options:
@@ -46,8 +50,8 @@ Usage: emap [options]
       $ emap -d ./examples -i iso-8859-1 -o iso-8859-1 -r -e
 ```
 
-
 ### JavaScript (Node.js)
+
 ```js
 let MapfileRenderer = require('mapfile-ejs');
 
@@ -73,7 +77,9 @@ setTimeout(() => {
 ```
 
 ### Mapfile
+
 Input (example.emap):
+
 ```js
 MAP
 
@@ -92,7 +98,9 @@ END
 
 END
 ```
+
 Output (example.map):
+
 ```js
 MAP
 

@@ -48,7 +48,7 @@ class MapfileRenderer {
       let inputData = iconv.decode(inputDataBuffer, this._options.inputEncoding);
 
       //Render the EJS
-      let outputData = ejs.render(inputData,{},{filename: file});
+      let outputData = ejs.render(inputData,{ require: require, filename: file},{filename: file});
 
       //Create a buffer
       let outputDataBuffer = iconv.encode(outputData, this._options.outputEncoding);
