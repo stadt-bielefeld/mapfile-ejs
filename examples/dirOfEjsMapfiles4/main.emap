@@ -1,0 +1,11 @@
+MAP
+
+<%
+  let fs = require('fs');
+  let txt = fs.readFileSync('test.txt');
+%>
+
+<%- txt %>
+<%- filename %>
+
+END
