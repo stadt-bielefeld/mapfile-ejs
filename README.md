@@ -4,24 +4,8 @@ The module mapfile-ejs allows you to use [Embedded JavaScript (EJS)](http://ejs.
 
 ## Installation
 
-### 01 NodeJS and NPM
-
-Windows:
-Use the installer from <https://nodejs.org/>
-
-Ubuntu / Debian:
-
-```sh
-apt-get install nodejs npm
-```
-
-### 02 mapfile-ejs
-
-Windows / Ubuntu / Debian
-
-```sh
-npm install mapfile-ejs -g
-```
+1. Install `Node.js` and `npm` from  <https://nodejs.org/>
+2. Install `mapfile-ejs` with `npm i mapfile-ejs -g`
 
 ## Getting started
 
@@ -50,31 +34,46 @@ Usage: emap [options]
       $ emap -d ./examples -i iso-8859-1 -o iso-8859-1 -r -e
 ```
 
-### JavaScript (Node.js)
+### JavaScript
+
+**Render a file:**
 
 ```js
-let MapfileRenderer = require('mapfile-ejs');
+const render = require(`mapfile-ejs`).render;
 
-//Create renderer
-let r1 = new MapfileRenderer();
-let r2 = new MapfileRenderer();
+// render file with default options
+const r1 = render(
+  `${__dirname}/template__utf8.emap`,
+  `${__dirname}/template__utf8.map`
+);
 
-//Watching and rendering in directory 1
-r1.watch('./dirOfEjsMapfiles1');
+// render file with custom options
+render(
+  `${__dirname}/template__iso_8859_1.emap`,
+  `${__dirname}/template__iso_8859_1__02.map`,
+  { inputEncoding: `ISO-8859-1`, outputEncoding: `ISO-8859-1` }
+);
+```
 
-//Watching and rendering in directory 2
-r2.watch('./dirOfEjsMapfiles2',{
-  inputEncoding: 'utf8',
-  outputEncoding: 'utf8',
+**Watch a directory:**
+
+```js
+const watchDir = require(`mapfile-ejs`).watch;
+
+// watch a directory with default options
+watch(`dir1`);
+
+// watch a directory with custom options
+watch(`dir2`, {
+  inputEncoding: `utf8`,
+  outputEncoding: `utf8`,
+  eFiles: false,
   ignoreInitial: false
 });
-
-//Stop watching and rendering after 15 sec
-setTimeout(() => {
-  r1.close();
-  r2.close();
-},15000);
 ```
+
+More details are available at the [API Documentation](https://stadt-bielefeld.github.io/mapfile-ejs/docs/api/index.html)
+and at the [examples directory](https://github.com/stadt-bielefeld/mapfile-ejs/tree/master/examples/)
 
 ### Mapfile
 
@@ -117,9 +116,35 @@ LAYER
 END
 
 END
+```
 
+## Documentation
+
+* [API Documentation](https://stadt-bielefeld.github.io/mapfile-ejs/docs/api/index.html)
+* [Changelog](https://github.com/stadt-bielefeld/mapfile-ejs/tree/master/docs/changelog/index.md)
+  
+## Developer
+
+**Build API Documentation:**
+
+```bash
+npm run build-api-doc
+```
+
+**Run cli during development:**
+
+```bash
+npm run cli -- -d ./examples/watchDir/dir1
+```
+
+**Run examples:**
+
+```bash
+node examples\isTemplate\index.js
+node examples\render\index.js
+node examples\watch\index.js
 ```
 
 ## License
 
-MIT
+[MIT](https://github.com/stadt-bielefeld/mapfile-ejs/blob/master/LICENSE)
