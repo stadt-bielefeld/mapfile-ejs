@@ -4,7 +4,7 @@ The module mapfile-ejs allows you to use [Embedded JavaScript (EJS)](http://ejs.
 
 ## Installation
 
-1. Install `Node.js` and `npm` from  <https://nodejs.org/>
+1. Install `Node.js` and `npm` from <https://nodejs.org/>
 2. Install `mapfile-ejs` with `npm i mapfile-ejs -g`
 
 ## Getting started
@@ -77,52 +77,58 @@ and at the [examples directory](https://github.com/stadt-bielefeld/mapfile-ejs/t
 
 ### Mapfile
 
-Input (example.emap):
+**Input (example.emap):**
 
 ```js
 MAP
-
 <%
   //Loop to create 3 layers
   for(let i = 0; i < 3; i++) {
-%>
-
-LAYER
-  NAME "layer_<%- i %>"
-END
-
+-%>
+  LAYER
+    NAME "layer_<%- i %>"
+  END
 <%
   } //End of loop
-%>
-
+-%>
 END
 ```
 
-Output (example.map):
+**Output (example.map):**
 
 ```js
 MAP
-
-LAYER
-  NAME "layer_0"
+  LAYER
+    NAME "layer_0"
+  END
+  LAYER
+    NAME "layer_1"
+  END
+  LAYER
+    NAME "layer_2"
+  END
 END
+```
 
-LAYER
-  NAME "layer_1"
-END
+**How to use require and include:**
 
-LAYER
-  NAME "layer_2"
-END
+```js
+<%
+// require is available like
+const path = require(`path`);
+-%>
 
-END
+<%
+// include is available (include_file.ejs) like
+-%>
+<%- include('include_file', { }); %>
 ```
 
 ## Documentation
 
-* [API Documentation](https://stadt-bielefeld.github.io/mapfile-ejs/docs/api/index.html)
-* [Changelog](https://github.com/stadt-bielefeld/mapfile-ejs/tree/master/docs/changelog/index.md)
-  
+- [API Documentation](https://stadt-bielefeld.github.io/mapfile-ejs/docs/api/index.html)
+- [Changelog](https://github.com/stadt-bielefeld/mapfile-ejs/tree/master/docs/changelog/index.md)
+
 ## Developer
 
 **Build API Documentation:**
