@@ -1,0 +1,29 @@
+MAP
+<% 
+  // https://nodejs.org/api/path.html#path_path_parse_path
+  const path = require(`path`);
+  const filenameParsed = path.parse(__filename);
+  const __dirname = filenameParsed.dir;
+
+  const data1 = require(`${__dirname}/data1.json`);
+  const data2 = require(`${__dirname}/data2.js`);
+-%>
+  # HEADER
+  #File: <%- filenameParsed.name %>
+  #data1: <%- JSON.stringify(data1) %>
+  #data2: <%- JSON.stringify(data2) %>
+  # HEADER
+<%  
+  const layers = [ `aaa`,  `bbb`, `ccc`];
+  layers.forEach(layer => {
+-%>
+  LAYER
+    NAME "<%- layer %>"
+  END
+<%
+  });
+-%>
+
+<%- include('comments', {data1, data2}); %>
+
+END

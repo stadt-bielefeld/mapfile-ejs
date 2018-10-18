@@ -1,0 +1,12 @@
+MAP
+<% 
+  const layers = [ `äää`,  `ööö`, `üüü`];
+  layers.forEach(layer => {
+-%>
+  LAYER
+    NAME "<%- layer %>"
+  END
+<%
+  });
+-%>
+END

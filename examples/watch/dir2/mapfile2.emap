@@ -2,7 +2,7 @@ MAP
 #Example 2 ...
 
 <%
-  let prefix = 'gf';
+  const prefix = 'gf';
   for(let i = 0; i < 3; i++) {
 %>
 LAYER
@@ -12,3 +12,4 @@ END
 
 #...
 END
+

@@ -1,0 +1,14 @@
+MAP
+<%  
+  throw new Error(`Big error in your template file`);
+  const layers = [ `aaa`,  `bbb`, `ccc`];
+  layers.forEach(layer => {
+-%>
+  LAYER
+    NAME "<%- layer %>"
+  END
+<%
+  });
+-%>
+
+END
