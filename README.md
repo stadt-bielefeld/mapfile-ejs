@@ -134,7 +134,7 @@ npm run build-api-doc
 **Run cli during development:**
 
 ```bash
-npm run cli -- -d ./examples/watchDir/dir1
+npm run emap -- -d ./examples/watchDir/dir1
 ```
 
 **Run examples:**

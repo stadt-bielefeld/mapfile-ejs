@@ -43,11 +43,10 @@ program.on(`--help`, function() {
 });
 
 // header
-console.log(`###################################################`);
-console.log(
-  `## ${packageJson.name} v${packageJson.version} #############################`
-);
-console.log(`###################################################`);
+let msg = `###################################################
+## ${packageJson.name} v${packageJson.version} #############################
+###################################################
+`;
 
 // parse arguments
 program.parse(process.argv);
@@ -55,39 +54,43 @@ program.parse(process.argv);
 // set directory
 if (!program.directory) {
   program.directory = path.resolve(`.`);
-}else{
+} else {
   program.directory = path.resolve(program.directory);
   console.log(path.resolve(program.directory));
 }
-console.log(`  Watching at ${program.directory}`);
+msg += `  Watching at ${program.directory}\n`;
 
 // set input encoding
 if (!program.inputEncoding) {
   program.inputEncoding = `utf8`;
 }
-console.log(`  Input encoding: ${program.inputEncoding}`);
+msg += `  Input encoding: ${program.inputEncoding}\n`;
 
 // set output encoding
 if (!program.outputEncoding) {
   program.outputEncoding = `utf8`;
 }
-console.log(`  Output encoding: ${program.outputEncoding}`);
+msg += `  Output encoding: ${program.outputEncoding}\n`;
 
 // set no rendering on start
 if (!program.ignoreInitial) {
   program.ignoreInitial = false;
 }
-console.log(`  Ignore rendering on initial: ${program.ignoreInitial}`);
+msg += `  Ignore rendering on initial: ${program.ignoreInitial}\n`;
 
 if (!program.eFiles) {
   program.eFiles = false;
 }
-console.log(`  Render all e files: ${program.eFiles}`);
+msg += `  Render all e files: ${program.eFiles}\n`;
 
 // footer
-console.log(`###################################################`);
-console.log(`## Stop watching with Ctrl+C ######################`);
-console.log(`###################################################`);
+msg += `###################################################
+## Stop watching with Ctrl+C ######################
+###################################################
+`;
+
+// log message
+console.log(msg);
 
 // watch and render
 watch(program.directory, {
