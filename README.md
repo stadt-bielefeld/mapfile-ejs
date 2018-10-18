@@ -146,9 +146,9 @@ npm run emap -- -d ./examples/watchDir/dir1
 **Run examples:**
 
 ```bash
-node examples\isTemplate\index.js
-node examples\render\index.js
-node examples\watch\index.js
+node examples/isTemplate/index.js
+node examples/render/index.js
+node examples/watch/index.js
 ```
 
 ## License
