@@ -58,7 +58,7 @@ render(
 **Watch a directory:**
 
 ```js
-const watchDir = require(`mapfile-ejs`).watch;
+const watch = require(`mapfile-ejs`).watch;
 
 // watch a directory with default options
 watch(`dir1`);
