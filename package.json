@@ -1,24 +1,23 @@
 {
   "name": "mapfile-ejs",
-  "version": "1.1.3",
-  "description": "Allows you to use Embedded JavaScript into MapServer Mapfiles.",
+  "version": "2.0.0",
+  "description": "Allows you to use Embedded JavaScript (EJS) into MapServer Mapfiles.",
   "main": "index.js",
   "bin": {
-    "emap": "emap.js"
-  },
-  "directories": {
-    "example": "examples"
+    "emap": "src/cli.js"
   },
   "dependencies": {
-    "chokidar": "^1.7.0",
-    "commander": "^2.11.0",
-    "ejs": "^2.5.7",
-    "iconv-lite": "^0.4.19"
+    "chokidar": "^2.0.4",
+    "commander": "^2.19.0",
+    "ejs": "^2.6.1",
+    "iconv-lite": "^0.4.24"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "documentation": "^8.1.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "example": "node ./examples/example.js"
+    "build-api-doc": "documentation build src/** --output docs/api --format html --watch",
+    "cli": "node src/cli.js"
   },
   "repository": {
     "type": "git",
@@ -28,12 +27,14 @@
     "Mapfile",
     "MapServer",
     "JavaScript",
+    "Templates",
     "EJS",
     "UMN",
     "WMS",
-    "WFS"
+    "WFS",
+    "WCS"
   ],
-  "author": "Jens Pabel <jens.pabel@bielefeld.de>",
+  "author": "Jens Brokfeld <jens.brokfeld@bielefeld.de> (https://www.bielefeld.de/de/rv/ds_stadtverwaltung/vuk)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/stadt-bielefeld/mapfile-ejs/issues"
