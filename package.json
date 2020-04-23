@@ -1,19 +1,19 @@
 {
   "name": "mapfile-ejs",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Allows you to use Embedded JavaScript (EJS) into MapServer Mapfiles.",
   "main": "index.js",
   "bin": {
     "emap": "src/emap.js"
   },
   "dependencies": {
-    "chokidar": "^2.0.4",
-    "commander": "^2.19.0",
-    "ejs": "^2.6.1",
-    "iconv-lite": "^0.4.24"
+    "chokidar": "^3.3.1",
+    "commander": "^5.0.0",
+    "ejs": "^3.0.2",
+    "iconv-lite": "^0.5.1"
   },
   "devDependencies": {
-    "documentation": "^8.1.2"
+    "documentation": "^12.3.0"
   },
   "scripts": {
     "build-api-doc": "documentation build src/** --output docs/api --format html --watch",

@@ -1,25 +1,28 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <meta charset='utf-8' />
-  <title>mapfile-ejs 2.0.0 | Documentation</title>
+  <meta charset='utf-8'>
+  <title>mapfile-ejs 2.0.3 | Documentation</title>
+  <meta name='description' content='Allows you to use Embedded JavaScript (EJS) into MapServer Mapfiles.'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
-  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
-  <link href='assets/style.css' type='text/css' rel='stylesheet' />
-  <link href='assets/github.css' type='text/css' rel='stylesheet' />
-  <link href='assets/split.css' type='text/css' rel='stylesheet' />
-  <meta name='description' content='Allows you to use Embedded JavaScript into MapServer Mapfiles.'>
+  <link href='assets/bass.css' rel='stylesheet'>
+  <link href='assets/style.css' rel='stylesheet'>
+  <link href='assets/github.css' rel='stylesheet'>
+  <link href='assets/split.css' rel='stylesheet'>
 </head>
 <body class='documentation m0'>
     <div class='flex'>
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>mapfile-ejs</h3>
-          <div class='mb1'><code>2.0.0</code></div>
+          <div class='mb1'><code>2.0.3</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
             class='col12 block input'
+            spellcheck='false'
+            autocapitalize='off'
+            autocorrect='off'
             type='text' />
           <div id='toc'>
             <ul class='list-reset h5 py1-ul'>
@@ -57,7 +60,7 @@
             </ul>
           </div>
           <div class='mt1 h6 quiet'>
-            <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+            <a href='https://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
           </div>
         </div>
       </div>
@@ -79,10 +82,7 @@
 
   <p>Checks is the file has a template file extension.</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>isTemplate(file: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, eFiles: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>): (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | null)</div>
-   
   
   
 
@@ -144,6 +144,8 @@
   
 
   
+
+  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
@@ -162,8 +164,11 @@
   
 
   
+
+  
 </section>
 
+          
         
           
           <section class='p2 mb2 clearfix bg-white minishadow'>
@@ -181,10 +186,7 @@
 
   <p>Renders a ejs template file.</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>render(inputFile: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, outputFile: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, options: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></div>
-   
   
   
 
@@ -289,6 +291,8 @@
   
 
   
+
+  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
@@ -321,8 +325,11 @@ render(
   
 
   
+
+  
 </section>
 
+          
         
           
           <section class='p2 mb2 clearfix bg-white minishadow'>
@@ -340,10 +347,7 @@ render(
 
   <p>Watches a directory and renders ejs templates on change.</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>watch(dir: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, options: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
-   
   
   
 
@@ -467,6 +471,8 @@ render(
   
 
   
+
+  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
@@ -490,8 +496,11 @@ watch(<span class="hljs-string">`dir2`</span>, {
   
 
   
+
+  
 </section>
 
+          
         
       </div>
     </div>

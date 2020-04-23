@@ -4,3 +4,5 @@ node_modules
 examples/**/*.map
 examples/**/*.xml
 examples/**/*.css
+
+package-lock.json
