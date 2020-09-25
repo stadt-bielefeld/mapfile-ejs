@@ -23,9 +23,6 @@
     "type": "git",
     "url": "git+https://github.com/stadt-bielefeld/mapfile-ejs.git"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "keywords": [
     "Mapfile",
     "MapServer",
