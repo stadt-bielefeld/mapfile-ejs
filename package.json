@@ -1,6 +1,6 @@
 {
-  "name": "@stadt-bielefeld/mapfile-ejs",
-  "version": "2.0.5",
+  "name": "mapfile-ejs",
+  "version": "2.0.6",
   "description": "Allows you to use Embedded JavaScript (EJS) into MapServer Mapfiles.",
   "main": "index.js",
   "bin": {
