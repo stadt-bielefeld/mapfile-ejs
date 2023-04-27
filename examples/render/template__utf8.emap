@@ -1,18 +1,19 @@
 MAP
 <% 
-  // https://nodejs.org/api/path.html#path_path_parse_path
-  const path = require(`path`);
-  const filenameParsed = path.parse(__filename);
-  const __dirname = filenameParsed.dir;
+  const path = await import(`node:path`);
+  const fs = await import(`node:fs/promises`);
 
-  const data1 = require(`${__dirname}/data1.json`);
-  const data2 = require(`${__dirname}/data2.js`);
+  const filenameParsed = path.parse(__filename);
+
+  const data1 = JSON.parse(await fs.readFile(`${__dirname}/data1.json`,{encoding: `utf8`}));
+  const data2 = (await import(`${__dirname}/data2.js`)).default;
 -%>
   # HEADER
-  #File: <%- filenameParsed.name %>
-  #data1: <%- JSON.stringify(data1) %>
-  #data2: <%- JSON.stringify(data2) %>
+  #  File: <%- filenameParsed.name %>
+  #  data1: <%- JSON.stringify(data1) %>
+  #  data2: <%- JSON.stringify(data2) %>
   # HEADER
+
 <%  
   const layers = [ `aaa`,  `bbb`, `ccc`];
   layers.forEach(layer => {
@@ -24,6 +25,6 @@ MAP
   });
 -%>
 
-<%- include('comments', {data1, data2}); %>
+<%- await include('comments', {data1, data2}); %>
 
 END

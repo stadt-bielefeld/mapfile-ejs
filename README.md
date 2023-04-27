@@ -4,8 +4,8 @@ The module mapfile-ejs allows you to use [Embedded JavaScript (EJS)](http://ejs.
 
 ## Installation
 
-1. Install `Node.js` and `npm` from <https://nodejs.org/>
-2. Install `mapfile-ejs` with `npm i mapfile-ejs -g`
+1. Install `Node.js` and `npm` from [https://nodejs.org/](https://nodejs.org/)
+2. Install `mapfile-ejs` with `npm install mapfile-ejs --global`
 
 ## Getting started
 
@@ -18,13 +18,13 @@ If you watch a directory, all \*.emap files will be rendering to \*.map files.
 Usage: emap [options]
 
   Options:
-    -h, --help                   Output usage information
-    -V, --version                Output the version number
-    -d, --directory [type]       Input directory of mapfiles with EJS (*.emap) (default: current directory)
-    -i, --inputEncoding [type]   Encoding of input mapfiles with EJS (default: utf8)
-    -o, --outputEncoding [type]  Encoding of output mapfiles without EJS (default: utf8)
-    -r, --ignoreInitial          Ignore rendering of mapfiles with EJS on initial (default: false)
-    -e, --eFiles                 Render all e files like *.exml, *.ecss (default: false)
+    -h, --help                     Output usage information
+    -V, --version                  Output the version number
+    -d, --directory <string>       Input directory of mapfiles with EJS (*.emap) (default: current directory)
+    -i, --inputEncoding <string>   Encoding of input mapfiles with EJS (default: utf8)
+    -o, --outputEncoding <string>  Encoding of output mapfiles without EJS (default: utf8)
+    -r, --ignoreInitial            Ignore rendering of mapfiles with EJS on initial (default: false)
+    -e, --eFiles                   Render all e files like *.exml, *.ecss (default: false)
 
   Examples:
     Start watching and rendering with default options:
@@ -39,26 +39,28 @@ Usage: emap [options]
 **Render a file:**
 
 ```js
-const render = require(`mapfile-ejs`).render;
+import { render } from 'mapfile-ejs';
 
-// render file with default options
-const r1 = render(
-  `${__dirname}/template__utf8.emap`,
-  `${__dirname}/template__utf8.map`
-);
-
-// render file with custom options
-render(
-  `${__dirname}/template__iso_8859_1.emap`,
-  `${__dirname}/template__iso_8859_1__02.map`,
-  { inputEncoding: `ISO-8859-1`, outputEncoding: `ISO-8859-1` }
-);
+(async () => {
+  // render file with default options
+  const r1 = render(
+    `${__dirname}/template__utf8.emap`,
+    `${__dirname}/template__utf8.map`
+  );
+  
+  // render file with custom options
+  render(
+    `${__dirname}/template__iso_8859_1.emap`,
+    `${__dirname}/template__iso_8859_1__02.map`,
+    { inputEncoding: `ISO-8859-1`, outputEncoding: `ISO-8859-1` }
+  );
+})();
 ```
 
 **Watch a directory:**
 
 ```js
-const watch = require(`mapfile-ejs`).watch;
+import { watch } from 'mapfile-ejs';
 
 // watch a directory with default options
 watch(`dir1`);
@@ -114,33 +116,22 @@ END
 
 ```js
 <%
-// require is available like
-const path = require(`path`);
+// import is available like
+const path = await import(`node:path`);
 -%>
 
 <%
 // include is available (include_file.ejs) like
 -%>
-<%- include('include_file', { }); %>
+<%- await include('include_file', { }); %>
 ```
-
-## Documentation
-
-- [API Documentation](https://stadt-bielefeld.github.io/mapfile-ejs/docs/api/index.html)
-- [Changelog](https://github.com/stadt-bielefeld/mapfile-ejs/tree/master/docs/changelog/index.md)
 
 ## Developer
-
-**Build API Documentation:**
-
-```bash
-npm run build-api-doc
-```
 
 **Run cli during development:**
 
 ```bash
-npm run emap -- -d ./examples/watchDir/dir1
+npm run emap -- -d ./examples/watch/dir1
 ```
 
 **Run examples:**
@@ -150,6 +141,57 @@ node examples/isTemplate/index.js
 node examples/render/index.js
 node examples/watch/index.js
 ```
+
+## Changelog
+
+### v3.0.0
+
+* Update dependencies (2023-04-27)
+* Switch from `require()`to `import()` (2023-04-27)
+* Remove api documentation (2023-04-27)
+* Remove ESLint configuration file `.eslintrc.js` (2023-04-27)
+
+### v2.0.7
+
+* Update dependencies
+
+### v2.0.6
+
+* Fix npm bug
+
+### v2.0.5
+
+* Change npm publisher
+
+### v2.0.4
+
+* Update dependencies
+
+### v2.0.3
+
+* Update dependencies
+
+### v2.0.2
+
+* Update mistaks in `README.md`
+
+### v2.0.1
+
+* Fix log bugs in the cli tool `emap`
+* Addexamples in `README.md`
+
+### v2.0.0
+
+* Add API Documentation `docs/api`
+* Add changelog `docs/changelog`
+* Add ESLint configuration file `.eslintrc.js`
+* Add Visual Studio Code configuration `.vscode/settings.json`
+* Restructure code in `src` directory
+* Add npm script `npm run cli -d ./examples/watchDir/dir1`
+* Update dependencies
+* Switch from class `MapfileRenderer` to module with `render()` and `watch()` function
+* Add `isTemplate()` function
+* Add new examples
 
 ## License
 

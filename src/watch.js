@@ -1,9 +1,7 @@
-`use strict`;
-
-const path = require(`path`);
-const chokidar = require(`chokidar`);
-const render = require(`${__dirname}/render.js`);
-const isTemplate = require(`${__dirname}/isTemplate.js`);
+import path from 'node:path';
+import chokidar from 'chokidar';
+import isTemplate from './isTemplate.js';
+import render from './render.js';
 
 const defaultOptions = {
   inputEncoding: `utf8`,
@@ -22,8 +20,7 @@ const defaultOptions = {
  * @param {Boolean} [options.eFiles=false] `true`: Render all e files like *.exml, *.ecss, `false`: Render only *.emap
  * @returns {Object} Watcher object, see {@link https://github.com/paulmillr/chokidar}
  * @example
- * const watchDir = require(`mapfile-ejs`).watch;
- * 
+ * import { watch } from 'mapfile-ejs';
  * // watch a directory with default options
  * watch(`dir1`);
  * 
@@ -35,7 +32,7 @@ const defaultOptions = {
  *   ignoreInitial: true
  * });
  */
-function watch(dir, options) {
+export default function watch(dir, options) {
   // resolve options
   options = { ...defaultOptions, ...options };
 
@@ -50,11 +47,11 @@ function watch(dir, options) {
   });
 
   // handle added files
-  watcher.on(`add`, file => {
+  watcher.on(`add`, async (file) => {
     const outputFile = isTemplate(file, options.eFiles);
     if (outputFile) {
       console.log(`add ` + file);
-      render(file, outputFile, {
+      await render(file, outputFile, {
         inputEncoding: options.inputEncoding,
         outputEncoding: options.outputEncoding
       });
@@ -64,11 +61,11 @@ function watch(dir, options) {
   });
 
   // handle changed files
-  watcher.on(`change`, file => {
+  watcher.on(`change`, async (file) => {
     const outputFile = isTemplate(file, options.eFiles);
     if (outputFile) {
       console.log(`change ` + file);
-      render(file, outputFile, {
+      await render(file, outputFile, {
         inputEncoding: options.inputEncoding,
         outputEncoding: options.outputEncoding
       });
@@ -84,5 +81,3 @@ function watch(dir, options) {
 
   return watcher;
 }
-
-module.exports = watch;

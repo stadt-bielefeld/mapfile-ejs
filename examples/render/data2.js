@@ -1,7 +1,6 @@
-`use strict`;
-
-const os = require(`os`);
+import os from 'node:os';
 
 const data = [os.hostname(), os.platform(), os.release()];
 
-module.exports = data;
+export default data;
+

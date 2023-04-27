@@ -1,7 +1,10 @@
-`use strict`;
+// node examples/watch/index.js
 
-//const watchDir = require(`mapfile-ejs`).watch;
-const watch = require(`${__dirname}/../../index.js`).watch;
+import { watch } from '../../index.js';
+import path from 'node:path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // watch a directory with default options
 watch(`${__dirname}/dir1`);

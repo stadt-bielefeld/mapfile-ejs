@@ -1,22 +1,19 @@
 {
   "name": "mapfile-ejs",
-  "version": "2.0.7",
+  "version": "3.0.0",
   "description": "Allows you to use Embedded JavaScript (EJS) into MapServer Mapfiles.",
   "main": "index.js",
+  "type": "module",
   "bin": {
     "emap": "src/emap.js"
   },
   "dependencies": {
-    "chokidar": "^3.5.2",
-    "commander": "^6.2.1",
-    "ejs": "^3.1.6",
+    "chokidar": "^3.5.3",
+    "commander": "^10.0.1",
+    "ejs": "^3.1.9",
     "iconv-lite": "^0.6.3"
   },
-  "devDependencies": {
-    "documentation": "^13.2.5"
-  },
   "scripts": {
-    "build-api-doc": "documentation build src/** --output docs/api --format html --watch",
     "emap": "node src/emap.js"
   },
   "repository": {
@@ -34,7 +31,7 @@
     "WFS",
     "WCS"
   ],
-  "author": "Jens Brokfeld <jens.brokfeld@bielefeld.de> (https://www.bielefeld.de/de/rv/ds_stadtverwaltung/vuk)",
+  "author": "Jens Brokfeld <jens.brokfeld@bielefeld.de>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/stadt-bielefeld/mapfile-ejs/issues"

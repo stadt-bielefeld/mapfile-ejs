@@ -1,11 +1,5 @@
-`use strict`;
+import isTemplate from './src/isTemplate.js';
+import render from './src/render.js';
+import watch from './src/watch.js';
 
-const render = require(`${__dirname}/src/render.js`);
-const watch = require(`${__dirname}/src/watch.js`);
-const isTemplate = require(`${__dirname}/src/isTemplate.js`);
-
-module.exports = {
-  isTemplate,
-  render,
-  watch
-};
+export { isTemplate, render, watch };
