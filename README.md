@@ -148,6 +148,7 @@ node examples/watch/index.js
 
 * Update dependencies (2023-04-27)
 * Switch from `require()`to `import()` (2023-04-27)
+* Switch `render()` to `async render()` (2023-04-07)
 * Remove api documentation (2023-04-27)
 * Remove ESLint configuration file `.eslintrc.js` (2023-04-27)
 
