@@ -5,7 +5,7 @@ The module mapfile-ejs allows you to use [Embedded JavaScript (EJS)](http://ejs.
 ## Installation
 
 1. Install `Node.js` and `npm` from [https://nodejs.org/](https://nodejs.org/)
-2. Install `mapfile-ejs` with `npm install mapfile-ejs --global`
+2. Install `mapfile-ejs` with `npm install mapfile-ejs -g`
 
 ## Getting started
 
@@ -43,15 +43,15 @@ import { render } from 'mapfile-ejs';
 
 (async () => {
   // render file with default options
-  const r1 = render(
-    `${__dirname}/template__utf8.emap`,
-    `${__dirname}/template__utf8.map`
+  await render(
+    `./template__utf8.emap`,
+    `./template__utf8.map`
   );
   
   // render file with custom options
-  render(
-    `${__dirname}/template__iso_8859_1.emap`,
-    `${__dirname}/template__iso_8859_1__02.map`,
+  await render(
+    `./template__iso_8859_1.emap`,
+    `./template__iso_8859_1__02.map`,
     { inputEncoding: `ISO-8859-1`, outputEncoding: `ISO-8859-1` }
   );
 })();
