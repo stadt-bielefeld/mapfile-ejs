@@ -144,6 +144,9 @@ node examples/watch/index.js
 
 ## Changelog
 
+### v3.0.1
+
+* Fix mistakes in README.md (2023-04-28)
 ### v3.0.0
 
 * Update dependencies (2023-04-27)
