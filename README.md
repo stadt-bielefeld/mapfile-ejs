@@ -5,7 +5,7 @@ The module mapfile-ejs allows you to use [Embedded JavaScript (EJS)](http://ejs.
 ## Installation
 
 1. Install `Node.js` and `npm` from [https://nodejs.org/](https://nodejs.org/)
-2. Install `mapfile-ejs` with `npm install mapfile-ejs -g`
+2. Install `mapfile-ejs` with `npm install -g github:stadt-bielefeld/mapfile-ejs#v3.0.1`
 
 ## Getting started
 
